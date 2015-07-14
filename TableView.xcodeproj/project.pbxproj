@@ -13,6 +13,8 @@
 		CD1152F91B5265E100A0C55D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD1152F81B5265E100A0C55D /* Images.xcassets */; };
 		CD1152FC1B5265E100A0C55D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD1152FA1B5265E100A0C55D /* LaunchScreen.xib */; };
 		CD1153081B5265E200A0C55D /* TableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1153071B5265E200A0C55D /* TableViewTests.swift */; };
+		CD11531C1B527F6F00A0C55D /* ProductTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD11531B1B527F6F00A0C55D /* ProductTableViewController.swift */; };
+		CD11531E1B52801600A0C55D /* CreateProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD11531D1B52801600A0C55D /* CreateProductViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		CD1153011B5265E200A0C55D /* TableViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TableViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD1153061B5265E200A0C55D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD1153071B5265E200A0C55D /* TableViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewTests.swift; sourceTree = "<group>"; };
+		CD11531B1B527F6F00A0C55D /* ProductTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductTableViewController.swift; sourceTree = "<group>"; };
+		CD11531D1B52801600A0C55D /* CreateProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateProductViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 			children = (
 				CD1152F11B5265E100A0C55D /* AppDelegate.swift */,
 				CD1152F31B5265E100A0C55D /* ViewController.swift */,
+				CD11531B1B527F6F00A0C55D /* ProductTableViewController.swift */,
+				CD11531D1B52801600A0C55D /* CreateProductViewController.swift */,
 				CD1152F51B5265E100A0C55D /* Main.storyboard */,
 				CD1152F81B5265E100A0C55D /* Images.xcassets */,
 				CD1152FA1B5265E100A0C55D /* LaunchScreen.xib */,
@@ -212,7 +218,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD11531E1B52801600A0C55D /* CreateProductViewController.swift in Sources */,
 				CD1152F41B5265E100A0C55D /* ViewController.swift in Sources */,
+				CD11531C1B527F6F00A0C55D /* ProductTableViewController.swift in Sources */,
 				CD1152F21B5265E100A0C55D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
