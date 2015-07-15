@@ -27,6 +27,15 @@
                                     </segue>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mFa-9O-c7N">
+                                <rect key="frame" x="120" y="421" width="80" height="30"/>
+                                <state key="normal" title="Passing">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Xvu-ru-dmS" kind="show" id="um2-ED-pjc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -37,6 +46,70 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="118" y="139"/>
+        </scene>
+        <!--PassingA View Controller-->
+        <scene sceneID="S0k-2b-k48">
+            <objects>
+                <viewController id="Xvu-ru-dmS" customClass="PassingAViewController" customModule="TableView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="odB-OA-4Yc"/>
+                        <viewControllerLayoutGuide type="bottom" id="JRv-JN-Cao"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Lmn-tD-qaf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PzZ-lA-u4L">
+                                <rect key="frame" x="112" y="148" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LE5-KM-p2i">
+                                <rect key="frame" x="107" y="209" width="107" height="30"/>
+                                <state key="normal" title="Pass B">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnPassB:" destination="Xvu-ru-dmS" eventType="touchUpInside" id="eba-oO-ZEc"/>
+                                    <segue destination="A8Y-z7-CDr" kind="show" identifier="pass" id="dOc-ls-3Lk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1og-mo-Q4Y">
+                                <rect key="frame" x="106" y="320" width="108" height="30"/>
+                                <state key="normal" title="Pass Vegan">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnPassVegan:" destination="Xvu-ru-dmS" eventType="touchUpInside" id="ITo-ue-G0O"/>
+                                    <segue destination="egZ-XS-7jj" kind="show" identifier="passvegan" id="pAW-Ue-IiD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dc1-ch-zye">
+                                <rect key="frame" x="89" y="309" width="142" height="30"/>
+                                <state key="normal" title="Pass Vegan Card">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnPassB:" destination="Xvu-ru-dmS" eventType="touchUpInside" id="pAk-3j-dwe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="dc1-ch-zye"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="txtPass" destination="PzZ-lA-u4L" id="bey-GL-K97"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e59-wb-K1G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-68" y="834"/>
         </scene>
         <!--Main Function-->
         <scene sceneID="h3R-QG-tdi">
@@ -67,7 +140,7 @@
                                 </state>
                                 <connections>
                                     <action selector="save:" destination="mPi-Y9-YkU" eventType="touchUpInside" id="aNA-Ui-ZJr"/>
-                                    <segue destination="Hnz-Ed-Mih" kind="show" id="oBJ-S9-RX9"/>
+                                    <segue destination="Hnz-Ed-Mih" kind="show" identifier="save" id="oBJ-S9-RX9"/>
                                 </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oYM-hC-6JC">
@@ -97,7 +170,8 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="egZ-XS-7jj" kind="presentation" id="X1Y-eZ-9AD"/>
+                                    <action selector="btnVegan:" destination="mPi-Y9-YkU" eventType="touchUpInside" id="tbd-RR-ElJ"/>
+                                    <segue destination="egZ-XS-7jj" kind="presentation" identifier="vegan" id="X1Y-eZ-9AD"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -117,10 +191,34 @@
                     </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="txtProductID" destination="xm2-2d-e6r" id="Bj2-ou-65n"/>
+                        <outlet property="txtProductName" destination="WIh-SK-iaj" id="vcd-Ez-L8v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PMw-Oa-fjp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="808" y="104"/>
+        </scene>
+        <!--PassingB View Controller-->
+        <scene sceneID="7Kd-Vq-f1X">
+            <objects>
+                <viewController id="A8Y-z7-CDr" customClass="PassingBViewController" customModule="TableView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="v6e-Sr-SEM"/>
+                        <viewControllerLayoutGuide type="bottom" id="chG-zj-eIc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ngi-Do-4Bf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="70j-lb-6yD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="364" y="1652"/>
         </scene>
         <!--Vegan Card Post View Controller-->
         <scene sceneID="Ezp-d4-Zpm">
@@ -188,7 +286,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zrJ-ba-LXP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="808" y="834"/>
+            <point key="canvasLocation" x="720" y="814"/>
         </scene>
         <!--Product Table View Controller-->
         <scene sceneID="Mkm-wO-H2x">
@@ -243,6 +341,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6te-0X-eZ8"/>
+        <segue reference="pAW-Ue-IiD"/>
+        <segue reference="oBJ-S9-RX9"/>
     </inferredMetricsTieBreakers>
 </document>

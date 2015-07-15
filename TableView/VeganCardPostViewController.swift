@@ -12,11 +12,22 @@ class VeganCardPostViewController: UIViewController {
 
     @IBOutlet weak var lblCardSerial: UILabel!
     @IBOutlet weak var lblPoint: UILabel!
+    var tempString:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //print("passing data:\(tempString)")
         // Do any additional setup after loading the view.
+//        print("loaded")
+        let alert = UIAlertView()
+        alert.title = "Alert"
+        alert.message = "Here's a message"
+        alert.addButtonWithTitle(tempString)
+        alert.show()
+        
+        print("passing data:\(tempString)")
+
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,55 +41,39 @@ class VeganCardPostViewController: UIViewController {
         
         var con : String! = ""
         
+        let url0 = NSURL(string: "http://220.130.10.50:1234/Login.cshtml")
+        let request = NSURLRequest(URL: url0!)
         
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {(response, data, error) in
+            print(NSString(data: data, encoding: NSUTF8StringEncoding))
+        }
+
         
         //let url = NSURL(string: "http://192.168.1.205:1111/api/User/read?pageNumber=1&pageSize=10")
         
-        let url = NSURL(string: "http://220.130.10.50:1234/Login.cshtml")
-        
-        let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
-            
-            //println(NSString(data: data, encoding: NSUTF8StringEncoding))
             
             
-            
-            //var s : NSString = "Hello world";
-            
-            //var con : String = String(NSString(data: data, encoding: NSUTF8StringEncoding)!)
-            
-            con = String(NSString(data: data, encoding: NSUTF8StringEncoding)!)
-            
-            
-            
-            dispatch_async(dispatch_get_main_queue()) {
-                
-                println(con)
-                
-                //self.lblContent.numberOfLines = 0;
-                
-                //self.lblContent.text = con
-                
-                
-                
-            }
+//            dispatch_async(dispatch_get_main_queue()) {
+//                
+//                print(con)
+//                
+//                //self.lblContent.numberOfLines = 0;
+//                
+//                //self.lblContent.text = con
+//                
+//                
+//                
+//            }
             
             
             
             //self.lblContent.val(NSString(data: data, encoding: NSUTF8StringEncoding))
             
-        }
         
         
         
         
-        
-        
-        
-        task.resume()
-        
-        //self.tvContent.text = con
-        
-        //self.tvContent.text = str
+       
         
         
     }
@@ -117,9 +112,9 @@ class VeganCardPostViewController: UIViewController {
         
         
         
-        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
-            
-            data, response, error in
+        //let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {(response, data, error) in
+            //data, response, error in
             
             
             
@@ -127,7 +122,7 @@ class VeganCardPostViewController: UIViewController {
                 
             {
                 
-                println("error=\(error)")
+                print("error=\(error)")
                 
                 return
                 
@@ -137,7 +132,7 @@ class VeganCardPostViewController: UIViewController {
             
             // You can print out response object
             
-            println("response = \(response)")
+            print("response = \(response)")
             
             
             
@@ -145,7 +140,7 @@ class VeganCardPostViewController: UIViewController {
             
             let responseString = NSString(data: data, encoding: NSUTF8StringEncoding)
             
-            println("responseString = \(responseString)")
+            print("responseString = \(responseString)")
             
             
             
@@ -217,9 +212,9 @@ class VeganCardPostViewController: UIViewController {
                 
                 
                 
-                println("CardSerial: \(CardSerial)")
+                print("CardSerial: \(CardSerial)")
                 
-                println("Point: \(Point)")
+                print("Point: \(Point)")
                 
             }
             

@@ -8,17 +8,27 @@
 
 import UIKit
 
+//protocol SendMessageDelegate{
+//    func sendWord(message : String)
+//}
+
 class ProductTableViewController: UITableViewController {
 
     @IBOutlet var tv: UITableView!
+    var tempString:String = ""
+    //var delegate : SendMessageDelegate?
     
     var list1: NSArray = ["hello1","hello2","hello3","don't do that"]
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tv.dataSource=self
         tv.delegate=self
+        
+        //print(tempString)
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -61,6 +71,7 @@ class ProductTableViewController: UITableViewController {
         
     }
 
+    
     
 //    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 //        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
