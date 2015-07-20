@@ -18,6 +18,7 @@
 		CD5CDED51B55890900A2958A /* VeganCardPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5CDED41B55890900A2958A /* VeganCardPostViewController.swift */; };
 		CD8715DA1B56F72E00846EA0 /* PassingAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8715D91B56F72E00846EA0 /* PassingAViewController.swift */; };
 		CD8715DC1B56F7BF00846EA0 /* PassingBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8715DB1B56F7BF00846EA0 /* PassingBViewController.swift */; };
+		CE5B87811B5CEC7000761E97 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B87801B5CEC7000761E97 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		CD5CDED41B55890900A2958A /* VeganCardPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VeganCardPostViewController.swift; sourceTree = "<group>"; };
 		CD8715D91B56F72E00846EA0 /* PassingAViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassingAViewController.swift; sourceTree = "<group>"; };
 		CD8715DB1B56F7BF00846EA0 /* PassingBViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassingBViewController.swift; sourceTree = "<group>"; };
+		CE5B87801B5CEC7000761E97 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				CD1152F81B5265E100A0C55D /* Images.xcassets */,
 				CD1152FA1B5265E100A0C55D /* LaunchScreen.xib */,
 				CD1152EF1B5265E100A0C55D /* Supporting Files */,
+				CE5B87801B5CEC7000761E97 /* WebViewController.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 				CD11531C1B527F6F00A0C55D /* ProductTableViewController.swift in Sources */,
 				CD1152F21B5265E100A0C55D /* AppDelegate.swift in Sources */,
 				CD5CDED51B55890900A2958A /* VeganCardPostViewController.swift in Sources */,
+				CE5B87811B5CEC7000761E97 /* WebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

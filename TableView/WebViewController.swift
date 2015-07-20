@@ -1,27 +1,24 @@
 //
-//  PassingBViewController.swift
+//  WebViewController.swift
 //  TableView
 //
-//  Created by Rex Liu on 2015/7/16.
+//  Created by user on 2015/7/20.
 //  Copyright (c) 2015年 Rex Liu. All rights reserved.
 //
 
 import UIKit
 
-class PassingBViewController: UIViewController {
-    
-    var tempString : String = ""
+class WebViewController: UIViewController {
+
+    @IBOutlet weak var webView: UIWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let alert = UIAlertView()
-        alert.title = "Alert"
-        alert.message = "Here's a message"
-        alert.addButtonWithTitle(tempString)
-        alert.show()
-
+        let url = NSURL(string: "http://220.130.10.50:1234/Login.cshtml")!
+        let request = NSURLRequest(URL: url)
         
-                        
+        //webView.sizeThatFits(CGSizeZero)  //.sizeThatFits = CGSizeZero
+        webView.loadRequest(request)
         // Do any additional setup after loading the view.
     }
 
@@ -31,6 +28,21 @@ class PassingBViewController: UIViewController {
     }
     
 
+    @IBAction func doBack(sender: AnyObject) {
+        webView.goBack()
+    }
+    
+    @IBAction func doRefresh(sender: AnyObject) {
+        webView.reload()
+    }
+    
+    @IBAction func doForward(sender: AnyObject) {
+        webView.goForward()
+    }
+    
+    @IBAction func doStop(sender: AnyObject) {
+        webView.stopLoading()
+    }
     /*
     // MARK: - Navigation
 
