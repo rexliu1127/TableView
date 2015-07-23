@@ -38,12 +38,12 @@ class CreateProductViewController: UIViewController {
         
         //self.performSegueWithIdentifier("toBviewController", sender: self)
         //self.tmpString = "通過segue進行的值傳遞方式1"
-        self.performSegueWithIdentifier("save", sender: nil)
+        //self.performSegueWithIdentifier("save", sender: nil)
         
     }
     
     @IBAction func btnVegan(sender: AnyObject) {
-        self.performSegueWithIdentifier("vegan", sender: nil)
+        //self.performSegueWithIdentifier("vegan", sender: nil)
         
     }
     

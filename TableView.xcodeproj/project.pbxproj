@@ -19,6 +19,8 @@
 		CD8715DA1B56F72E00846EA0 /* PassingAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8715D91B56F72E00846EA0 /* PassingAViewController.swift */; };
 		CD8715DC1B56F7BF00846EA0 /* PassingBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8715DB1B56F7BF00846EA0 /* PassingBViewController.swift */; };
 		CE5B87811B5CEC7000761E97 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B87801B5CEC7000761E97 /* WebViewController.swift */; };
+		CE9459501B5F92C400F118BB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE94594F1B5F92C400F118BB /* LoginViewController.swift */; };
+		CE9459521B5F974200F118BB /* ClassLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9459511B5F974200F118BB /* ClassLibrary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		CD8715D91B56F72E00846EA0 /* PassingAViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassingAViewController.swift; sourceTree = "<group>"; };
 		CD8715DB1B56F7BF00846EA0 /* PassingBViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassingBViewController.swift; sourceTree = "<group>"; };
 		CE5B87801B5CEC7000761E97 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		CE94594F1B5F92C400F118BB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CE9459511B5F974200F118BB /* ClassLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassLibrary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,8 @@
 				CD11531B1B527F6F00A0C55D /* ProductTableViewController.swift */,
 				CD11531D1B52801600A0C55D /* CreateProductViewController.swift */,
 				CD1152F51B5265E100A0C55D /* Main.storyboard */,
+				CE94594F1B5F92C400F118BB /* LoginViewController.swift */,
+				CE9459511B5F974200F118BB /* ClassLibrary.swift */,
 				CD8715D91B56F72E00846EA0 /* PassingAViewController.swift */,
 				CD8715DB1B56F7BF00846EA0 /* PassingBViewController.swift */,
 				CD5CDED41B55890900A2958A /* VeganCardPostViewController.swift */,
@@ -230,7 +236,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE9459501B5F92C400F118BB /* LoginViewController.swift in Sources */,
 				CD8715DA1B56F72E00846EA0 /* PassingAViewController.swift in Sources */,
+				CE9459521B5F974200F118BB /* ClassLibrary.swift in Sources */,
 				CD11531E1B52801600A0C55D /* CreateProductViewController.swift in Sources */,
 				CD1152F41B5265E100A0C55D /* ViewController.swift in Sources */,
 				CD8715DC1B56F7BF00846EA0 /* PassingBViewController.swift in Sources */,
