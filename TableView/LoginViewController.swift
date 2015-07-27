@@ -25,27 +25,60 @@ class LoginViewController: UIViewController {
         
         //loading.startAnimating()
         
-        isLogin(self.txtAccount.text, password: self.txtPassword.text)
+        login(self.txtAccount.text, password: self.txtPassword.text)
         
         println(cbm.result)
         println(cbm.message)
         
-        //println(cbm.result)
+        
+    }
+    
+    func switchToViewController(identifier: String) {
+        
+        let storyboard:UIStoryboard = UIStoryboard(name:"Main", bundle:nil)
+        
+        let viewController = self.storyboard?.instantiateViewControllerWithIdentifier(identifier) as! UIViewController
+        //self.storyboard?.instantiateViewControllerWithIdentifier(identifier)
+        //self.navigationController?.setViewControllers([viewController], animated: false)
+        //let vc = self.storyboard?.instantiateViewControllerWithIdentifier(identifier) as! ViewController
 
         
-        //sleep(3)
+        //let dummy = vc.view // force loading subviews and setting outlets
         
-        //loading.stopAnimating()
-        
-        
-        //txtResult.text = String(stringInterpolationSegment: cbm.result)
-        
-        
+        viewController.viewDidLoad()
     }
     
     @IBAction func btnForget(sender: AnyObject) {
+        
+//        UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+        
+        
+//        var s : UIStoryboard
+        
+        //var v : UIViewController =
+        //self.storyboard!.instantiateViewControllerWithIdentifier("viewForget")
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("viewForget") as! UIViewController
+        self.presentViewController(vc, animated: true, completion: nil)
+        
+        //switchToViewController("viewForget")
+        
+//        MasterDetailTestDetailViewController *viewController =
+//            [self.storyboard instantiateViewControllerWithIdentifier:@"Poem"];
+
+        
     }
     
+    @IBAction func btnCreate(sender: AnyObject) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("viewCreate") as! UIViewController
+        self.presentViewController(vc, animated: true, completion: nil)
+        
+        
+
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -68,7 +101,7 @@ class LoginViewController: UIViewController {
     
     func login(account:String,password:String)
     {
-        var cbm  = BooleanMessage()
+        //var cbm  = BooleanMessage()
         var result : String = ""
         var message : String! = ""
         var source : String! = ""
@@ -84,9 +117,9 @@ class LoginViewController: UIViewController {
             request.HTTPMethod = "POST";
             
             
-            let postString = "=[{\"Token\":\"inyoung99\",\"Account\":\"\(account)\",\"Password\":\"\(password)\"}]";
+            let postString = "=[{\"Token\":\"\(GlobalConstants.token)\",\"Account\":\"\(account)\",\"Password\":\"\(password)\"}]";
             
-            cbm.message = String(postString)
+            //cbm.message = String(postString)
             
             request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding);
 
@@ -96,7 +129,7 @@ class LoginViewController: UIViewController {
                     
                 {
                     
-                    cbm.message = "send api error"
+                    //cbm.message = "send api error"
                     //return cbm
                 }
 
@@ -107,7 +140,7 @@ class LoginViewController: UIViewController {
                 
                 var myJSON = NSJSONSerialization.JSONObjectWithData(data, options: .MutableLeaves, error:&err) as? NSDictionary
                 
-                cbm.message="5"
+                //cbm.message="5"
                 
                 if let parseJSON = myJSON {
                     
@@ -125,12 +158,17 @@ class LoginViewController: UIViewController {
                         
                         if(result == "1")
                         {
-                            cbm.result = true
+                            //cbm.result = true
                             let alert = UIAlertView()
                             alert.title = "登入訊息"
                             alert.message = "登入成功"
                             alert.addButtonWithTitle("OK")
                             alert.show()
+                            
+                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                            let vc = storyboard.instantiateViewControllerWithIdentifier("viewMain") as! UIViewController
+                            self.presentViewController(vc, animated: true, completion: nil)
+
                             
                         }
                         else
@@ -180,7 +218,7 @@ class LoginViewController: UIViewController {
             request.HTTPMethod = "POST";
             
             
-            let postString = "=[{\"Token\":\"inyoung99\",\"Account\":\"\(account)\",\"Password\":\"\(password)\"}]";
+            let postString = "=[{\"Token\":\"\(GlobalConstants.token)\",\"Account\":\"\(account)\",\"Password\":\"\(password)\"}]";
             
             cbm.message = String(postString)
             

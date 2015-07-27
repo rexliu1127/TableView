@@ -48,6 +48,9 @@ class CreateProductViewController: UIViewController {
     }
     
     
+    @IBAction func btnCodeOpen(sender: AnyObject) {
+        //navigationController.pushViewController(VeganCardPostViewController, animated: true)
+    }
     
     
     // MARK: - Navigation
