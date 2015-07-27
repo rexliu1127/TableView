@@ -12,6 +12,7 @@ class Remote: NSObject {
     
     var data = NSMutableData()
     var result = NSString()
+    var post = NSString()
     
     func connect(query:NSString) {
 //        let urlPath: String = "http://td99api.azurewebsites.net/api"
@@ -33,13 +34,13 @@ class Remote: NSObject {
 //        var url: NSURL = NSURL(string: urlPath)!
 //        var request = NSURLRequest(URL: url)
         
-        let urlPath: String = "http://td99api.azurewebsites.net/api/validateAccount"
+        let urlPath: String = "http://td99api.azurewebsites.net/api\(query)"
         var url: NSURL = NSURL(string: urlPath)!
         var request: NSMutableURLRequest = NSMutableURLRequest(URL: url)
         
-        var stringPost="=[{\"Token\":\"\(GlobalConstants.token)\",\"Account\":\"rex\"}]"
+        //var stringPost="=[{\"Token\":\"\(GlobalConstants.token)\",\"Account\":\"rex\"}]"
         
-        let postdata = stringPost.dataUsingEncoding(NSUTF8StringEncoding)
+        let postdata = post.dataUsingEncoding(NSUTF8StringEncoding)
         
         //println(postdata)
         

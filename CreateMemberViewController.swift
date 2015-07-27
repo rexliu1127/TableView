@@ -103,18 +103,46 @@ class CreateMemberViewController: UIViewController {
 //            println("result=\(responseString)")
 //        })
         
-        var re = Remote()
+        var error_message : String = ""
         
+        var validateAccount = Remote()
+        validateAccount.post = "=[{\"Token\":\"\(GlobalConstants.token)\",\"Account\":\"\(account.text)\"}]"
         //re.connect("/validateAccount",post:"=[{\"Token\":\"\(GlobalConstants.token)\",\"Account\":\"rex\"}]")
-        re.connect("/apis")
-        println(re.result)
+        validateAccount.connect("/ValidateAccount")
+        //println(re.result)
         
-        var res  = PostResponse(JSONString:String(re.result))
+        var response_account  = PostResponse(JSONString:String(validateAccount.result))
+        
+        if(response_account.Result == "0")
+        {
+            error_message = response_account.Message
+        }
+        
+        var validateEmail = Remote()
+        validateEmail.post = "=[{\"Token\":\"\(GlobalConstants.token)\",\"Email\":\"\(email.text)\"}]"
+        validateEmail.connect("/ValidateEmail")
+
+        
+        var response_email  = PostResponse(JSONString:String(validateEmail.result))
+
+        if(response_email.Result == "0")
+        {
+            error_message = error_message + "\n" + response_email.Message
+        }
+        
+        if(error_message != "")
+        {
+            let alert = UIAlertView()
+            alert.title = "訊息"
+            alert.message = error_message
+            alert.addButtonWithTitle("OK")
+            alert.show()
+        }
         
         
-        println(res.Result)
-        println(res.Message)
-        println(res.Source)
+//        println(res.Result)
+//        println(res.Message)
+//        println(res.Source)
         
         
 //        var remote = Remote()
