@@ -21,8 +21,15 @@
 		CE5B87811B5CEC7000761E97 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B87801B5CEC7000761E97 /* WebViewController.swift */; };
 		CE9459501B5F92C400F118BB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE94594F1B5F92C400F118BB /* LoginViewController.swift */; };
 		CE9459521B5F974200F118BB /* ClassLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9459511B5F974200F118BB /* ClassLibrary.swift */; };
-		CEA61F5E1B63472B00E0AEE4 /* CreateMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA61F5D1B63472B00E0AEE4 /* CreateMemberViewController.swift */; };
 		CEA61F601B634CB900E0AEE4 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA61F5F1B634CB900E0AEE4 /* Global.swift */; };
+		CEB4AD3B1B6A2E0A00E2AD64 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB4AD3A1B6A2E0A00E2AD64 /* libsqlite3.dylib */; };
+		CEB4AD3D1B6A2E5300E2AD64 /* CreateMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB4AD3C1B6A2E5300E2AD64 /* CreateMemberViewController.swift */; };
+		CEB4AD491B6A2E9000E2AD64 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB4AD3F1B6A2E9000E2AD64 /* FMDatabase.m */; };
+		CEB4AD4A1B6A2E9000E2AD64 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB4AD411B6A2E9000E2AD64 /* FMDatabaseAdditions.m */; };
+		CEB4AD4B1B6A2E9000E2AD64 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB4AD431B6A2E9000E2AD64 /* FMDatabasePool.m */; };
+		CEB4AD4C1B6A2E9000E2AD64 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB4AD451B6A2E9000E2AD64 /* FMDatabaseQueue.m */; };
+		CEB4AD4D1B6A2E9000E2AD64 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB4AD481B6A2E9000E2AD64 /* FMResultSet.m */; };
+		CEB4AD501B6A2ED100E2AD64 /* Db.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB4AD4F1B6A2ED100E2AD64 /* Db.swift */; };
 		CEE762881B65F06D00000FA6 /* Remote.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE762871B65F06D00000FA6 /* Remote.swift */; };
 		CEE7628A1B663F4600000FA6 /* PostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE762891B663F4600000FA6 /* PostResponse.swift */; };
 /* End PBXBuildFile section */
@@ -54,10 +61,24 @@
 		CD8715D91B56F72E00846EA0 /* PassingAViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassingAViewController.swift; sourceTree = "<group>"; };
 		CD8715DB1B56F7BF00846EA0 /* PassingBViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassingBViewController.swift; sourceTree = "<group>"; };
 		CE5B87801B5CEC7000761E97 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		CE7528B11B687E4E00F880AF /* TableView-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TableView-Bridging-Header.h"; sourceTree = "<group>"; };
 		CE94594F1B5F92C400F118BB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CE9459511B5F974200F118BB /* ClassLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassLibrary.swift; sourceTree = "<group>"; };
-		CEA61F5D1B63472B00E0AEE4 /* CreateMemberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateMemberViewController.swift; path = ../CreateMemberViewController.swift; sourceTree = "<group>"; };
 		CEA61F5F1B634CB900E0AEE4 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		CEB4AD3A1B6A2E0A00E2AD64 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		CEB4AD3C1B6A2E5300E2AD64 /* CreateMemberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateMemberViewController.swift; sourceTree = "<group>"; };
+		CEB4AD3E1B6A2E9000E2AD64 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		CEB4AD3F1B6A2E9000E2AD64 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		CEB4AD401B6A2E9000E2AD64 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		CEB4AD411B6A2E9000E2AD64 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		CEB4AD421B6A2E9000E2AD64 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		CEB4AD431B6A2E9000E2AD64 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		CEB4AD441B6A2E9000E2AD64 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		CEB4AD451B6A2E9000E2AD64 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		CEB4AD461B6A2E9000E2AD64 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		CEB4AD471B6A2E9000E2AD64 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		CEB4AD481B6A2E9000E2AD64 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		CEB4AD4F1B6A2ED100E2AD64 /* Db.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Db.swift; sourceTree = "<group>"; };
 		CEE762871B65F06D00000FA6 /* Remote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Remote.swift; sourceTree = "<group>"; };
 		CEE762891B663F4600000FA6 /* PostResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEB4AD3B1B6A2E0A00E2AD64 /* libsqlite3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +105,7 @@
 		CD1152E31B5265E100A0C55D = {
 			isa = PBXGroup;
 			children = (
+				CEB4AD3A1B6A2E0A00E2AD64 /* libsqlite3.dylib */,
 				CD1152EE1B5265E100A0C55D /* TableView */,
 				CD1153041B5265E200A0C55D /* TableViewTests */,
 				CD1152ED1B5265E100A0C55D /* Products */,
@@ -101,12 +124,13 @@
 		CD1152EE1B5265E100A0C55D /* TableView */ = {
 			isa = PBXGroup;
 			children = (
+				CEB4AD3C1B6A2E5300E2AD64 /* CreateMemberViewController.swift */,
+				CE7528B11B687E4E00F880AF /* TableView-Bridging-Header.h */,
 				CEA61F5F1B634CB900E0AEE4 /* Global.swift */,
 				CD1152F11B5265E100A0C55D /* AppDelegate.swift */,
 				CD1152F31B5265E100A0C55D /* ViewController.swift */,
 				CD11531B1B527F6F00A0C55D /* ProductTableViewController.swift */,
 				CD11531D1B52801600A0C55D /* CreateProductViewController.swift */,
-				CEA61F5D1B63472B00E0AEE4 /* CreateMemberViewController.swift */,
 				CEE762871B65F06D00000FA6 /* Remote.swift */,
 				CEE762891B663F4600000FA6 /* PostResponse.swift */,
 				CD1152F51B5265E100A0C55D /* Main.storyboard */,
@@ -116,8 +140,10 @@
 				CD8715DB1B56F7BF00846EA0 /* PassingBViewController.swift */,
 				CD5CDED41B55890900A2958A /* VeganCardPostViewController.swift */,
 				CE5B87801B5CEC7000761E97 /* WebViewController.swift */,
+				CEB4AD4F1B6A2ED100E2AD64 /* Db.swift */,
 				CD1152F81B5265E100A0C55D /* Images.xcassets */,
 				CD1152FA1B5265E100A0C55D /* LaunchScreen.xib */,
+				CEB4AD4E1B6A2E9C00E2AD64 /* fmdb */,
 				CD1152EF1B5265E100A0C55D /* Supporting Files */,
 			);
 			path = TableView;
@@ -146,6 +172,24 @@
 				CD1153061B5265E200A0C55D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CEB4AD4E1B6A2E9C00E2AD64 /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				CEB4AD3E1B6A2E9000E2AD64 /* FMDatabase.h */,
+				CEB4AD3F1B6A2E9000E2AD64 /* FMDatabase.m */,
+				CEB4AD401B6A2E9000E2AD64 /* FMDatabaseAdditions.h */,
+				CEB4AD411B6A2E9000E2AD64 /* FMDatabaseAdditions.m */,
+				CEB4AD421B6A2E9000E2AD64 /* FMDatabasePool.h */,
+				CEB4AD431B6A2E9000E2AD64 /* FMDatabasePool.m */,
+				CEB4AD441B6A2E9000E2AD64 /* FMDatabaseQueue.h */,
+				CEB4AD451B6A2E9000E2AD64 /* FMDatabaseQueue.m */,
+				CEB4AD461B6A2E9000E2AD64 /* FMDB.h */,
+				CEB4AD471B6A2E9000E2AD64 /* FMResultSet.h */,
+				CEB4AD481B6A2E9000E2AD64 /* FMResultSet.m */,
+			);
+			name = fmdb;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,18 +294,24 @@
 			files = (
 				CE9459501B5F92C400F118BB /* LoginViewController.swift in Sources */,
 				CD8715DA1B56F72E00846EA0 /* PassingAViewController.swift in Sources */,
+				CEB4AD3D1B6A2E5300E2AD64 /* CreateMemberViewController.swift in Sources */,
+				CEB4AD491B6A2E9000E2AD64 /* FMDatabase.m in Sources */,
 				CE9459521B5F974200F118BB /* ClassLibrary.swift in Sources */,
-				CEA61F5E1B63472B00E0AEE4 /* CreateMemberViewController.swift in Sources */,
+				CEB4AD4D1B6A2E9000E2AD64 /* FMResultSet.m in Sources */,
 				CD11531E1B52801600A0C55D /* CreateProductViewController.swift in Sources */,
 				CD1152F41B5265E100A0C55D /* ViewController.swift in Sources */,
+				CEB4AD4A1B6A2E9000E2AD64 /* FMDatabaseAdditions.m in Sources */,
 				CD8715DC1B56F7BF00846EA0 /* PassingBViewController.swift in Sources */,
 				CD11531C1B527F6F00A0C55D /* ProductTableViewController.swift in Sources */,
 				CEE7628A1B663F4600000FA6 /* PostResponse.swift in Sources */,
 				CEA61F601B634CB900E0AEE4 /* Global.swift in Sources */,
+				CEB4AD501B6A2ED100E2AD64 /* Db.swift in Sources */,
 				CEE762881B65F06D00000FA6 /* Remote.swift in Sources */,
 				CD1152F21B5265E100A0C55D /* AppDelegate.swift in Sources */,
 				CD5CDED51B55890900A2958A /* VeganCardPostViewController.swift in Sources */,
 				CE5B87811B5CEC7000761E97 /* WebViewController.swift in Sources */,
+				CEB4AD4B1B6A2E9000E2AD64 /* FMDatabasePool.m in Sources */,
+				CEB4AD4C1B6A2E9000E2AD64 /* FMDatabaseQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,9 +438,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TableView",
+				);
 				INFOPLIST_FILE = TableView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TableView/TableView-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -398,9 +455,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TableView",
+				);
 				INFOPLIST_FILE = TableView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TableView/TableView-Bridging-Header.h";
 			};
 			name = Release;
 		};

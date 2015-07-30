@@ -22,7 +22,11 @@ class CreateMemberViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //var db = Db()
+        
+        
+        //var test = db.getDb()
+        
         // Do any additional setup after loading the view.
     }
 
@@ -75,7 +79,42 @@ class CreateMemberViewController: UIViewController {
     
     @IBAction func btnCheck(sender: AnyObject) {
         
+        let filemgr = NSFileManager.defaultManager()
+        let dirPaths =
+        NSSearchPathForDirectoriesInDomains(.DocumentDirectory,
+            .UserDomainMask, true)
         
+        let docsDir = dirPaths[0] as! String
+        
+        var databasePath = docsDir.stringByAppendingPathComponent("feedlog.db")
+        
+        let db = FMDatabase(path: databasePath)
+        
+        if !filemgr.fileExistsAtPath(databasePath) {
+            
+            
+            
+            if db == nil {
+                println("Error: \(db.lastErrorMessage())")
+            }
+            
+            if db.open() {
+                let sql_stmt = "CREATE TABLE IF NOT EXISTS FEEDLOGS (ID TEXT PRIMARY KEY, COUNT INTEGER, TYPE INTEGER,LOGTIME DATETIME,LOGDAY TEXT, REMARK TEXT)"
+                if !db.executeStatements(sql_stmt) {
+                    println("Error: \(db.lastErrorMessage())")
+                }
+                db.close()
+            } else {
+                println("Error: \(db.lastErrorMessage())")
+            }
+        }
+        
+        
+        var sql: NSString = "INSERT INTO FEEDLOGS (ID,COUNT,TYPE,LOGTIME,LOGDAY,REMARK) "+"VALUES (1,1,2,'2015/1/1','2015/1/1','2')"
+        //let db = Db.getDb()
+        db.open()
+        db.executeStatements(sql as String)
+        db.close()
         
 //        var result = ""
 //        let urlPath: String = "http://td99api.azurewebsites.net/api/validateAccount"
