@@ -79,68 +79,68 @@ class CreateMemberViewController: UIViewController {
     
     @IBAction func btnCheck(sender: AnyObject) {
         
-        let filemgr = NSFileManager.defaultManager()
-        let dirPaths =
-        NSSearchPathForDirectoriesInDomains(.DocumentDirectory,
-            .UserDomainMask, true)
+        //db create and insert table
         
-        let docsDir = dirPaths[0] as! String
+//        let filemgr = NSFileManager.defaultManager()
+//        let dirPaths =
+//        NSSearchPathForDirectoriesInDomains(.DocumentDirectory,
+//            .UserDomainMask, true)
+//        
+//        let docsDir = dirPaths[0] as! String
+//        
+//        var databasePath =  "/Users/user/desktop/feedlog.db" //docsDir.stringByAppendingPathComponent("feedlog.db")
+//        
+//        println(databasePath)
+//        
+//        let db = FMDatabase(path: databasePath)
+//        
+//        if !filemgr.fileExistsAtPath(databasePath) {
+//            
+//            
+//            
+//            if db == nil {
+//                println("Error: \(db.lastErrorMessage())")
+//            }
+//            
+//            if db.open() {
+//                let sql_stmt = "CREATE TABLE IF NOT EXISTS FEEDLOGS (ID TEXT PRIMARY KEY, COUNT INTEGER, TYPE INTEGER,LOGTIME DATETIME,LOGDAY TEXT, REMARK TEXT)"
+//                if !db.executeStatements(sql_stmt) {
+//                    println("Error: \(db.lastErrorMessage())")
+//                }
+//                db.close()
+//                println("dbopen")
+//            } else {
+//                println("Error: \(db.lastErrorMessage())")
+//            }
+//            
+//        }
+//        
+//        
+//        var sql: NSString = "INSERT INTO FEEDLOGS (ID,COUNT,TYPE,LOGTIME,LOGDAY,REMARK) "+"VALUES (2,1,2,'2015/1/1','2015/1/1','2')"
+//        //let db = Db.getDb()
+//        db.open()
+//        db.executeStatements(sql as String)
+//        db.close()
         
-        var databasePath = docsDir.stringByAppendingPathComponent("feedlog.db")
         
+        var databasePath =  "/Users/user/desktop/feedlog.db"
         let db = FMDatabase(path: databasePath)
-        
-        if !filemgr.fileExistsAtPath(databasePath) {
-            
-            
-            
-            if db == nil {
-                println("Error: \(db.lastErrorMessage())")
-            }
-            
-            if db.open() {
-                let sql_stmt = "CREATE TABLE IF NOT EXISTS FEEDLOGS (ID TEXT PRIMARY KEY, COUNT INTEGER, TYPE INTEGER,LOGTIME DATETIME,LOGDAY TEXT, REMARK TEXT)"
-                if !db.executeStatements(sql_stmt) {
-                    println("Error: \(db.lastErrorMessage())")
-                }
-                db.close()
-            } else {
-                println("Error: \(db.lastErrorMessage())")
-            }
-        }
-        
-        
-        var sql: NSString = "INSERT INTO FEEDLOGS (ID,COUNT,TYPE,LOGTIME,LOGDAY,REMARK) "+"VALUES (1,1,2,'2015/1/1','2015/1/1','2')"
+        let sql = "SELECT * FROM login"
         //let db = Db.getDb()
         db.open()
-        db.executeStatements(sql as String)
+        let rs = db.executeQuery(sql, withArgumentsInArray: nil)
+        //var log:FeedLog?=FeedLog()
+        while rs.next() {
+            println(rs.stringForColumn("account"))
+            println(rs.stringForColumn("password"))
+//            log?.count=Int(rs.intForColumn("COUNT"))
+//            log?.type=Int(rs.intForColumn("TYPE"))
+//            log?.remark=rs.stringForColumn("REMARK")
+//            log?.logTime=rs.dateForColumn("LOGTIME")
+//            log?.logDay=rs.stringForColumn("LOGDAY")
+        }
         db.close()
         
-//        var result = ""
-//        let urlPath: String = "http://td99api.azurewebsites.net/api/validateAccount"
-//        var url: NSURL = NSURL(string: urlPath)!
-//        var request1: NSMutableURLRequest = NSMutableURLRequest(URL: url)
-//        
-//        request1.HTTPMethod = "POST"
-//        var stringPost="=[{\"Token\":\"\(GlobalConstants.token)\",\"Account\":\"rex\"}]"
-//        
-//        let data = stringPost.dataUsingEncoding(NSUTF8StringEncoding)
-//        
-//        request1.timeoutInterval = 60
-//        request1.HTTPBody=data
-//        request1.HTTPShouldHandleCookies=false
-//        
-//        let queue:NSOperationQueue = NSOperationQueue()
-//        
-//        NSURLConnection.sendAsynchronousRequest(request1, queue: queue, completionHandler:{ (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
-//            var err: NSError
-//            var jsonResult: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSDictionary
-//            let responseString = NSString(data: data, encoding: NSUTF8StringEncoding)!
-//
-//            println("AsSynchronous\(responseString)")
-//            result = responseString as String
-//            println("result=\(responseString)")
-//        })
         
         var error_message : String = ""
         
