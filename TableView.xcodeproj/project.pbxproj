@@ -19,6 +19,9 @@
 		CD8715DA1B56F72E00846EA0 /* PassingAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8715D91B56F72E00846EA0 /* PassingAViewController.swift */; };
 		CD8715DC1B56F7BF00846EA0 /* PassingBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8715DB1B56F7BF00846EA0 /* PassingBViewController.swift */; };
 		CE5B87811B5CEC7000761E97 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B87801B5CEC7000761E97 /* WebViewController.swift */; };
+		CE6D2AB21B6CD693004F544C /* TryCatchFinally.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6D2AB11B6CD693004F544C /* TryCatchFinally.m */; };
+		CE6D2AB41B6CD7A1004F544C /* TryCatchFinally.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6D2AB31B6CD7A1004F544C /* TryCatchFinally.swift */; };
+		CE6D2AB61B6CDB9C004F544C /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6D2AB51B6CDB9C004F544C /* UserData.swift */; };
 		CE9459501B5F92C400F118BB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE94594F1B5F92C400F118BB /* LoginViewController.swift */; };
 		CE9459521B5F974200F118BB /* ClassLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9459511B5F974200F118BB /* ClassLibrary.swift */; };
 		CEA61F601B634CB900E0AEE4 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA61F5F1B634CB900E0AEE4 /* Global.swift */; };
@@ -61,6 +64,10 @@
 		CD8715D91B56F72E00846EA0 /* PassingAViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassingAViewController.swift; sourceTree = "<group>"; };
 		CD8715DB1B56F7BF00846EA0 /* PassingBViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassingBViewController.swift; sourceTree = "<group>"; };
 		CE5B87801B5CEC7000761E97 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		CE6D2AB01B6CD693004F544C /* TryCatchFinally.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TryCatchFinally.h; sourceTree = "<group>"; };
+		CE6D2AB11B6CD693004F544C /* TryCatchFinally.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TryCatchFinally.m; sourceTree = "<group>"; };
+		CE6D2AB31B6CD7A1004F544C /* TryCatchFinally.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TryCatchFinally.swift; sourceTree = "<group>"; };
+		CE6D2AB51B6CDB9C004F544C /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		CE7528B11B687E4E00F880AF /* TableView-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TableView-Bridging-Header.h"; sourceTree = "<group>"; };
 		CE94594F1B5F92C400F118BB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CE9459511B5F974200F118BB /* ClassLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassLibrary.swift; sourceTree = "<group>"; };
@@ -144,7 +151,10 @@
 				CD1152F81B5265E100A0C55D /* Images.xcassets */,
 				CD1152FA1B5265E100A0C55D /* LaunchScreen.xib */,
 				CEB4AD4E1B6A2E9C00E2AD64 /* fmdb */,
+				CE6D2AAF1B6CD672004F544C /* trycatch */,
 				CD1152EF1B5265E100A0C55D /* Supporting Files */,
+				CE6D2AB31B6CD7A1004F544C /* TryCatchFinally.swift */,
+				CE6D2AB51B6CDB9C004F544C /* UserData.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -172,6 +182,15 @@
 				CD1153061B5265E200A0C55D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CE6D2AAF1B6CD672004F544C /* trycatch */ = {
+			isa = PBXGroup;
+			children = (
+				CE6D2AB01B6CD693004F544C /* TryCatchFinally.h */,
+				CE6D2AB11B6CD693004F544C /* TryCatchFinally.m */,
+			);
+			name = trycatch;
 			sourceTree = "<group>";
 		};
 		CEB4AD4E1B6A2E9C00E2AD64 /* fmdb */ = {
@@ -300,9 +319,11 @@
 				CEB4AD4D1B6A2E9000E2AD64 /* FMResultSet.m in Sources */,
 				CD11531E1B52801600A0C55D /* CreateProductViewController.swift in Sources */,
 				CD1152F41B5265E100A0C55D /* ViewController.swift in Sources */,
+				CE6D2AB21B6CD693004F544C /* TryCatchFinally.m in Sources */,
 				CEB4AD4A1B6A2E9000E2AD64 /* FMDatabaseAdditions.m in Sources */,
 				CD8715DC1B56F7BF00846EA0 /* PassingBViewController.swift in Sources */,
 				CD11531C1B527F6F00A0C55D /* ProductTableViewController.swift in Sources */,
+				CE6D2AB61B6CDB9C004F544C /* UserData.swift in Sources */,
 				CEE7628A1B663F4600000FA6 /* PostResponse.swift in Sources */,
 				CEA61F601B634CB900E0AEE4 /* Global.swift in Sources */,
 				CEB4AD501B6A2ED100E2AD64 /* Db.swift in Sources */,
@@ -310,6 +331,7 @@
 				CD1152F21B5265E100A0C55D /* AppDelegate.swift in Sources */,
 				CD5CDED51B55890900A2958A /* VeganCardPostViewController.swift in Sources */,
 				CE5B87811B5CEC7000761E97 /* WebViewController.swift in Sources */,
+				CE6D2AB41B6CD7A1004F544C /* TryCatchFinally.swift in Sources */,
 				CEB4AD4B1B6A2E9000E2AD64 /* FMDatabasePool.m in Sources */,
 				CEB4AD4C1B6A2E9000E2AD64 /* FMDatabaseQueue.m in Sources */,
 			);

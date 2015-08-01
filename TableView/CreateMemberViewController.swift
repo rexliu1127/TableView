@@ -122,24 +122,64 @@ class CreateMemberViewController: UIViewController {
 //        db.executeStatements(sql as String)
 //        db.close()
         
+        //var fmdb = Db(path: "/Users/user/desktop/", dbname: "feedlog.db")
         
-        var databasePath =  "/Users/user/desktop/feedlog.db"
-        let db = FMDatabase(path: databasePath)
-        let sql = "SELECT * FROM login"
+        var bm = BooleanMessage()
+        
+        var fmdb = Db()
+        fmdb.Path = "/Users/user/desktop/"
+        fmdb.DbName  = "feedlog.db"
+        bm = fmdb.isOpen()
+        
+        if bm.Result == true
+        {
+            var d = fmdb.DB
+            
+            let dsql = "select * from login"
+            let rs1 =  d.executeQuery(dsql, withArgumentsInArray: nil)
+            
+            while rs1.next()
+            {
+                println("dbobject:" + rs1.stringForColumn("account"))
+                println("dbobject:" + rs1.stringForColumn("password"))
+            }
+            
+
+        }
+        
+        fmdb.Sql = "insert into login (account,password) values(?,?)"
+        var values = [String]()
+        var bmInsert = BooleanMessage()
+        values = ["hello","1234"]
+        fmdb.values = values
+        //bmInsert = fmdb.isExecuteNonQuery()
+        
+        println("Insert result=\(bmInsert.Result),message=\(bmInsert.Message)")
+        
+        
+        //var databasePath =  "/Users/user/desktop/feedlog.db"
+        //let db = FMDatabase(path: databasePath)
+        fmdb.Sql = "SELECT * FROM login"
+        //fmdb.values = nil
+        values = []
+        fmdb.values = values
+        
+        let rs = fmdb.getRs().ResultSet
+
         //let db = Db.getDb()
-        db.open()
-        let rs = db.executeQuery(sql, withArgumentsInArray: nil)
+        //db.open()
+        //let rs = db.executeQuery(sql, withArgumentsInArray: nil)
         //var log:FeedLog?=FeedLog()
         while rs.next() {
-            println(rs.stringForColumn("account"))
-            println(rs.stringForColumn("password"))
+            println("rs result method:" + rs.stringForColumn("account"))
+            println("rs result method:" + rs.stringForColumn("password"))
 //            log?.count=Int(rs.intForColumn("COUNT"))
 //            log?.type=Int(rs.intForColumn("TYPE"))
 //            log?.remark=rs.stringForColumn("REMARK")
 //            log?.logTime=rs.dateForColumn("LOGTIME")
 //            log?.logDay=rs.stringForColumn("LOGDAY")
         }
-        db.close()
+        //db.close()
         
         
         var error_message : String = ""

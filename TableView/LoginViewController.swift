@@ -27,8 +27,8 @@ class LoginViewController: UIViewController {
         
         login(self.txtAccount.text, password: self.txtPassword.text)
         
-        println(cbm.result)
-        println(cbm.message)
+        println(cbm.Result)
+        println(cbm.Message)
         
         
     }
@@ -119,7 +119,7 @@ class LoginViewController: UIViewController {
             
             let postString = "=[{\"Token\":\"\(GlobalConstants.token)\",\"Account\":\"\(account)\",\"Password\":\"\(password)\"}]";
             
-            //cbm.message = String(postString)
+            //cbm.Message = String(postString)
             
             request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding);
 
@@ -129,7 +129,7 @@ class LoginViewController: UIViewController {
                     
                 {
                     
-                    //cbm.message = "send api error"
+                    //cbm.Message = "send api error"
                     //return cbm
                 }
 
@@ -140,7 +140,7 @@ class LoginViewController: UIViewController {
                 
                 var myJSON = NSJSONSerialization.JSONObjectWithData(data, options: .MutableLeaves, error:&err) as? NSDictionary
                 
-                //cbm.message="5"
+                //cbm.Message="5"
                 
                 if let parseJSON = myJSON {
                     
@@ -220,11 +220,11 @@ class LoginViewController: UIViewController {
             
             let postString = "=[{\"Token\":\"\(GlobalConstants.token)\",\"Account\":\"\(account)\",\"Password\":\"\(password)\"}]";
             
-            cbm.message = String(postString)
+            cbm.Message = String(postString)
             
             request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding);
             
-            cbm.message="1234"
+            cbm.Message="1234"
             
             
             //let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
@@ -234,7 +234,7 @@ class LoginViewController: UIViewController {
                     
                 {
                     
-                    cbm.message = "send api error"
+                    cbm.Message = "send api error"
                     //return cbm
                 }
                 
@@ -252,8 +252,8 @@ class LoginViewController: UIViewController {
                 
                 //print("responseString = \(responseString)")
                 
-                cbm.message=String(responseString!)
-                cbm.message="1234"
+                cbm.Message=String(responseString!)
+                cbm.Message="1234"
                 println(responseString)
 
                 //Let's convert response sent from a server side script to a NSDictionary object:
@@ -267,7 +267,7 @@ class LoginViewController: UIViewController {
                 
                 var myJSON = NSJSONSerialization.JSONObjectWithData(data, options: .MutableLeaves, error:&err) as? NSDictionary
                 
-                cbm.message="5"
+                cbm.Message="5"
                 
                 if let parseJSON = myJSON {
                     
@@ -304,7 +304,7 @@ class LoginViewController: UIViewController {
                         
                         if(result == "1")
                         {
-                            cbm.result = true
+                            cbm.Result  = true
                             let alert = UIAlertView()
                             alert.title = "登入訊息"
                             alert.message = "登入成功"
@@ -328,7 +328,7 @@ class LoginViewController: UIViewController {
                         
                     }
                     
-                    cbm.message = message
+                    cbm.Message = message
                     
                     //self.txtResult.text = result
                     
@@ -349,9 +349,9 @@ class LoginViewController: UIViewController {
         
         //txtResult.text = String(stringInterpolationSegment: cbm.result)
         //cbm.result=result
-        cbm.message=message
-        println("wait return cbm.result=\(cbm.result)")
-        println("wait return cbm.message=\(cbm.message)")
+        cbm.Message=message
+        println("wait return cbm.result=\(cbm.Result)")
+        println("wait return cbm.Message=\(cbm.Message)")
         return cbm
 
         

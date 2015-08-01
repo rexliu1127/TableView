@@ -12,12 +12,12 @@ import Foundation
 class BooleanMessage {
     
     init() {
-        result = false
-        message = ""
+        Result = false
+        Message = ""
     }
     
-    var result: Bool = false
-    var message: String = ""
+    var Result: Bool = false
+    var Message: String = ""
     
 //    init()
 //    {
@@ -25,5 +25,24 @@ class BooleanMessage {
 //    }
     
 
+    // class definition goes here
+}
+
+class ResultSetMessage {
+    
+    init() {
+        ResultSet = FMResultSet()
+        Message = ""
+    }
+    
+    var ResultSet : FMResultSet
+    var Message: String = ""
+    
+    //    init()
+    //    {
+    //
+    //    }
+    
+    
     // class definition goes here
 }
