@@ -164,8 +164,8 @@ class CreateMemberViewController: UIViewController {
         values = []
         fmdb.values = values
         
-        let rs = fmdb.getRs().ResultSet
-
+        var rs = fmdb.getRs().ResultSet
+        println(rs.columnCount())
         //let db = Db.getDb()
         //db.open()
         //let rs = db.executeQuery(sql, withArgumentsInArray: nil)

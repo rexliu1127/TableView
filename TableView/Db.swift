@@ -95,11 +95,7 @@ class Db
                         rsm.ResultSet = self.DB.executeQuery(self.Sql, withArgumentsInArray: nil)
                         print(rsm.ResultSet.columnCount())
                         print(rsm.ResultSet)
-                        while rsm.ResultSet.next()
-                        {
-                            println("rs result method:" + rsm.ResultSet.stringForColumn("account"))
-                            println("rs result method:" + rsm.ResultSet.stringForColumn("password"))
-                        }
+                        
                     }
                     else
                     {
@@ -125,7 +121,12 @@ class Db
                 self.DB.close()
             }
         
-        
+        while rsm.ResultSet.next()
+        {
+            println("rs result method:" + rsm.ResultSet.stringForColumn("account"))
+            println("rs result method:" + rsm.ResultSet.stringForColumn("password"))
+        }
+
         return rsm
     }
     

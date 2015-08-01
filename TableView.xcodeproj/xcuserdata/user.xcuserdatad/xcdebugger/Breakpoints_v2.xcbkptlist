@@ -22,7 +22,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TableView/Db.swift"
@@ -41,13 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TableView/Db.swift"
-            timestampString = "460121996.58741"
+            filePath = "TableView/CreateMemberViewController.swift"
+            timestampString = "460122131.853592"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
-            landmarkName = "getRs()"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "btnCheck(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
