@@ -19,13 +19,6 @@ class BooleanMessage {
     var Result: Bool = false
     var Message: String = ""
     
-//    init()
-//    {
-//        
-//    }
-    
-
-    // class definition goes here
 }
 
 class ResultSetMessage {
@@ -38,11 +31,16 @@ class ResultSetMessage {
     var ResultSet : FMResultSet
     var Message: String = ""
     
-    //    init()
-    //    {
-    //
-    //    }
+}
+
+class NSMutableArrayMessage {
     
+    init() {
+        NSMArray = NSMutableArray()
+        Message = ""
+    }
     
-    // class definition goes here
+    var NSMArray : NSMutableArray
+    var Message: String = ""
+    
 }

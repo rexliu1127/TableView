@@ -17,17 +17,7 @@ class Db
     var DB = FMDatabase()
     var Sql : String = ""
     var values = [String]()
-    
-//    init(path : String, dbname : String)
-//    {
-//        Path = path
-//        DbName = dbname
-//        let filemgr = NSFileManager.defaultManager()
-//        var databasePath = Path + DbName
-//        self.db = FMDatabase(path: databasePath)
-//        self.db.open()
-//    }
-//    
+
     
     func isOpen()->BooleanMessage
     {
@@ -56,7 +46,18 @@ class Db
             
             if(self.DB.open())
             {
-                self.DB.executeUpdate(self.Sql, withArgumentsInArray: self.values)
+                if(self.values.count == 0)
+                {
+                    
+                    self.DB.executeUpdate(self.Sql, withArgumentsInArray: nil)
+                }
+                else
+                {
+                    
+                    self.DB.executeUpdate(self.Sql, withArgumentsInArray: self.values)
+                }
+   
+                
                 bm.Result = true
             }
         
@@ -78,71 +79,94 @@ class Db
         
     }
     
-    func getRs() ->ResultSetMessage
-    {
     
-        var rsm = ResultSetMessage()
-        
+    func getArrayResultMessage() -> NSMutableArrayMessage
+    {
+        var rs = FMResultSet()
+        var am = NSMutableArrayMessage()
+
         try
             {
                 
                 if(self.DB.open())
                 {
-                    //self.DB.executeUpdate(self.Sql, withArgumentsInArray: self.values)
+
                     if(self.values.count == 0)
                     {
-                        println(self.Sql)
-                        rsm.ResultSet = self.DB.executeQuery(self.Sql, withArgumentsInArray: nil)
-                        print(rsm.ResultSet.columnCount())
-                        print(rsm.ResultSet)
-                        
+                        rs = self.DB.executeQuery(self.Sql, withArgumentsInArray: nil)
                     }
                     else
                     {
-                        println(self.Sql)
-                        
-                        rsm.ResultSet = self.DB.executeQuery(self.Sql, withArgumentsInArray: self.values)
+                        rs = self.DB.executeQuery(self.Sql, withArgumentsInArray: self.values)
                     }
-                    
-                    //bm.result = true
+
+                    while rs.next()
+                    {
+                        am.NSMArray.addObject(rs.resultDictionary())
+                    }
+
                 }
                 
             }
             .catch
             {
                 e in
-                
-                //println("  caught \(e)")
-                rsm.Message = "exception: \(e)"
+
+                am.Message = "exception: \(e)"
             }
             .finally
             {
-                //println("  finally")
                 self.DB.close()
-            }
-        
-        while rsm.ResultSet.next()
-        {
-            println("rs result method:" + rsm.ResultSet.stringForColumn("account"))
-            println("rs result method:" + rsm.ResultSet.stringForColumn("password"))
         }
+        
+        return am
 
-        return rsm
     }
+    
+//    func getRs() ->ResultSetMessage
+//    {
+//    
+//        var rsm = ResultSetMessage()
+//        var ary = NSMutableArray()
+//        try
+//            {
+//                
+//                if(self.DB.open())
+//                {
+//                    if(self.values.count == 0)
+//                    {
+//                        rsm.ResultSet = self.DB.executeQuery(self.Sql, withArgumentsInArray: nil)
+//                    }
+//                    else
+//                    {
+//                        println(self.Sql)
+//                        
+//                        rsm.ResultSet = self.DB.executeQuery(self.Sql, withArgumentsInArray: self.values)
+//                    }
+//                }
+//                
+//            }
+//            .catch
+//            {
+//                e in
+//                
+//                //println("  caught \(e)")
+//                rsm.Message = "exception: \(e)"
+//            }
+//            .finally
+//            {
+//                //println("  finally")
+//                self.DB.close()
+//            }
+//       
+//        return rsm
+//    }
     
     func getDb()->FMDatabase{
         
 
         let filemgr = NSFileManager.defaultManager()
-        
-//        let dirPaths =
-//        NSSearchPathForDirectoriesInDomains(.DocumentDirectory,
-//            .UserDomainMask, true)
-//        
-//        let docsDir = dirPaths[0] as! String
-        
-        
-        //var databasePath = docsDir.stringByAppendingPathComponent("feedlog.db")
+
         var databasePath = Path + DbName //docsDir.stringByAppendingPathComponent(DbName)
         
         if !filemgr.fileExistsAtPath(databasePath) {
@@ -152,16 +176,7 @@ class Db
             if db == nil {
                 println("Error: \(db.lastErrorMessage())")
             }
-            
-//            if db.open() {
-//                let sql_stmt = "CREATE TABLE IF NOT EXISTS FEEDLOGS (ID TEXT PRIMARY KEY, COUNT INTEGER, TYPE INTEGER,LOGTIME DATETIME,LOGDAY TEXT, REMARK TEXT)"
-//                if !db.executeStatements(sql_stmt) {
-//                    println("Error: \(db.lastErrorMessage())")
-//                }
-//                db.close()
-//            } else {
-//                println("Error: \(db.lastErrorMessage())")
-//            }
+
         }
         println(databasePath)
         

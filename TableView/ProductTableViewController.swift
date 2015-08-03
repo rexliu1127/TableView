@@ -19,7 +19,7 @@ class ProductTableViewController: UITableViewController {
     //var delegate : SendMessageDelegate?
     
     var list1: NSArray = ["hello1","hello2","hello3","don't do that"]
-    
+    var am = NSMutableArrayMessage()
     
     
     override func viewDidLoad() {
@@ -27,6 +27,18 @@ class ProductTableViewController: UITableViewController {
         
         tv.dataSource=self
         tv.delegate=self
+        
+        var values = [String]()
+        var fmdb = Db()
+        fmdb.Path = "/Users/user/desktop/"
+        fmdb.DbName  = "feedlog.db"
+        var bm = BooleanMessage()
+        bm = fmdb.isOpen()
+        fmdb.Sql = "SELECT * FROM login"
+        values = []
+        fmdb.values = values
+        am = fmdb.getArrayResultMessage()
+        println(am.NSMArray)
         
         //print(tempString)
         
@@ -53,7 +65,7 @@ class ProductTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return list1.count
+        return am.NSMArray.count //list1.count
     }
     
     
@@ -62,11 +74,43 @@ class ProductTableViewController: UITableViewController {
         
         var cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
         
-        cell.textLabel?.text = "this is row \(indexPath.row):\(list1.objectAtIndex(indexPath.row))"
+        //cell.textLabel?.text = "this is row \(indexPath.row):\(list1.objectAtIndex(indexPath.row))"
         
-        print("\n")
-        print("\(indexPath.row) : \(list1.objectAtIndex(indexPath.row))\n")
+        //print("\n")
+        //print("\(indexPath.row) : \(list1.objectAtIndex(indexPath.row))\n")
         
+        //self.array2[indexPath.row] as NSString
+        //cell.textLabel?.text = am.NSMArray.objectAtIndex(indexPath.row) as! String
+//        for (NSString key in am.NSMArray.objectAtIndex(indexPath.row)) {
+//            //id object = [dict objectForKey:key];
+//            cell.textLabel?.text = String(key)
+//        }
+//        for(key,value) in am.NSMArray.objectAtIndex(indexPath.row)
+//        {
+//            
+//        }
+        var dict = NSDictionary()
+        
+        dict = am.NSMArray.objectAtIndex(indexPath.row) as! NSDictionary
+
+        var content = String()
+        content = ""
+        
+        for (key, value) in dict {
+            if(content == "")
+            {
+                content = "\(key):\(value)"
+            }
+            else
+            {
+                content  = content + ";\(key):\(value)"
+            }
+            
+        }
+        
+        cell.textLabel?.text = content
+        
+
         return cell
         
     }

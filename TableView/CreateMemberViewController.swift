@@ -28,6 +28,19 @@ class CreateMemberViewController: UIViewController {
         //var test = db.getDb()
         
         // Do any additional setup after loading the view.
+        
+        var fruit : NSArray = ["apple","orange","banana"]
+        var color : NSArray = ["color","white"]
+        
+        var all : NSMutableArray
+        all = []
+        
+        all.addObjectsFromArray(fruit as [AnyObject])
+        all.addObjectsFromArray(color as [AnyObject])
+        
+        println(all)
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -152,34 +165,22 @@ class CreateMemberViewController: UIViewController {
         var bmInsert = BooleanMessage()
         values = ["hello","1234"]
         fmdb.values = values
-        //bmInsert = fmdb.isExecuteNonQuery()
+
         
         println("Insert result=\(bmInsert.Result),message=\(bmInsert.Message)")
         
-        
-        //var databasePath =  "/Users/user/desktop/feedlog.db"
-        //let db = FMDatabase(path: databasePath)
+
         fmdb.Sql = "SELECT * FROM login"
-        //fmdb.values = nil
         values = []
         fmdb.values = values
         
-        var rs = fmdb.getRs().ResultSet
-        println(rs.columnCount())
-        //let db = Db.getDb()
-        //db.open()
-        //let rs = db.executeQuery(sql, withArgumentsInArray: nil)
-        //var log:FeedLog?=FeedLog()
-        while rs.next() {
-            println("rs result method:" + rs.stringForColumn("account"))
-            println("rs result method:" + rs.stringForColumn("password"))
-//            log?.count=Int(rs.intForColumn("COUNT"))
-//            log?.type=Int(rs.intForColumn("TYPE"))
-//            log?.remark=rs.stringForColumn("REMARK")
-//            log?.logTime=rs.dateForColumn("LOGTIME")
-//            log?.logDay=rs.stringForColumn("LOGDAY")
-        }
-        //db.close()
+        var am = NSMutableArrayMessage()
+        
+        am = fmdb.getArrayResultMessage()
+        
+        //println(am.NSMArray)
+        
+        
         
         
         var error_message : String = ""
