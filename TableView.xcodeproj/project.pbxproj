@@ -33,6 +33,9 @@
 		CEB4AD4C1B6A2E9000E2AD64 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB4AD451B6A2E9000E2AD64 /* FMDatabaseQueue.m */; };
 		CEB4AD4D1B6A2E9000E2AD64 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB4AD481B6A2E9000E2AD64 /* FMResultSet.m */; };
 		CEB4AD501B6A2ED100E2AD64 /* Db.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB4AD4F1B6A2ED100E2AD64 /* Db.swift */; };
+		CEE2EC001B7770400093FBE4 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE2EBFF1B7770400093FBE4 /* CoreData.framework */; };
+		CEE2EC031B7774B20093FBE4 /* Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEE2EC011B7774B20093FBE4 /* Data.xcdatamodeld */; };
+		CEE2EC051B7775090093FBE4 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE2EC041B7775090093FBE4 /* Member.swift */; };
 		CEE762881B65F06D00000FA6 /* Remote.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE762871B65F06D00000FA6 /* Remote.swift */; };
 		CEE7628A1B663F4600000FA6 /* PostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE762891B663F4600000FA6 /* PostResponse.swift */; };
 /* End PBXBuildFile section */
@@ -86,6 +89,9 @@
 		CEB4AD471B6A2E9000E2AD64 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		CEB4AD481B6A2E9000E2AD64 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		CEB4AD4F1B6A2ED100E2AD64 /* Db.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Db.swift; sourceTree = "<group>"; };
+		CEE2EBFF1B7770400093FBE4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		CEE2EC021B7774B20093FBE4 /* Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Data.xcdatamodel; sourceTree = "<group>"; };
+		CEE2EC041B7775090093FBE4 /* Member.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		CEE762871B65F06D00000FA6 /* Remote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Remote.swift; sourceTree = "<group>"; };
 		CEE762891B663F4600000FA6 /* PostResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEE2EC001B7770400093FBE4 /* CoreData.framework in Frameworks */,
 				CEB4AD3B1B6A2E0A00E2AD64 /* libsqlite3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -112,6 +119,7 @@
 		CD1152E31B5265E100A0C55D = {
 			isa = PBXGroup;
 			children = (
+				CEE2EBFF1B7770400093FBE4 /* CoreData.framework */,
 				CEB4AD3A1B6A2E0A00E2AD64 /* libsqlite3.dylib */,
 				CD1152EE1B5265E100A0C55D /* TableView */,
 				CD1153041B5265E200A0C55D /* TableViewTests */,
@@ -155,6 +163,8 @@
 				CD1152EF1B5265E100A0C55D /* Supporting Files */,
 				CE6D2AB31B6CD7A1004F544C /* TryCatchFinally.swift */,
 				CE6D2AB51B6CDB9C004F544C /* UserData.swift */,
+				CEE2EC011B7774B20093FBE4 /* Data.xcdatamodeld */,
+				CEE2EC041B7775090093FBE4 /* Member.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -330,10 +340,12 @@
 				CEE762881B65F06D00000FA6 /* Remote.swift in Sources */,
 				CD1152F21B5265E100A0C55D /* AppDelegate.swift in Sources */,
 				CD5CDED51B55890900A2958A /* VeganCardPostViewController.swift in Sources */,
+				CEE2EC031B7774B20093FBE4 /* Data.xcdatamodeld in Sources */,
 				CE5B87811B5CEC7000761E97 /* WebViewController.swift in Sources */,
 				CE6D2AB41B6CD7A1004F544C /* TryCatchFinally.swift in Sources */,
 				CEB4AD4B1B6A2E9000E2AD64 /* FMDatabasePool.m in Sources */,
 				CEB4AD4C1B6A2E9000E2AD64 /* FMDatabaseQueue.m in Sources */,
+				CEE2EC051B7775090093FBE4 /* Member.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,6 +566,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CEE2EC011B7774B20093FBE4 /* Data.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CEE2EC021B7774B20093FBE4 /* Data.xcdatamodel */,
+			);
+			currentVersion = CEE2EC021B7774B20093FBE4 /* Data.xcdatamodel */;
+			path = Data.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CD1152E41B5265E100A0C55D /* Project object */;
 }

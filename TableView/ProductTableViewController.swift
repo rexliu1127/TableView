@@ -89,6 +89,7 @@ class ProductTableViewController: UITableViewController {
 //        {
 //            
 //        }
+        
         var dict = NSDictionary()
         
         dict = am.NSMArray.objectAtIndex(indexPath.row) as! NSDictionary
@@ -108,8 +109,25 @@ class ProductTableViewController: UITableViewController {
             
         }
         
-        cell.textLabel?.text = content
+        /*
+        let imageName = "/Users/user/desktop/joystick128x128.png"
+        let image = UIImage(named: imageName)
+        let imageView = UIImageView(image: image!)
+        imageView.frame = CGRect(x: 0, y: 0, width: 128, height: 128)
+
+*/
         
+        //var iv = UIIMageView()
+        //var imageView = UIImageView()
+        
+        let imageName = "/Users/user/desktop/joystick128x128.png"
+        let image = UIImage(named: imageName)
+        let imageView = UIImageView(image: image!)
+        imageView.frame = CGRect(x: 0, y: 0, width: 15, height: 15)
+        cell.imageView?.image = imageView.image
+        
+        cell.textLabel?.text = content
+
 
         return cell
         
